@@ -7,9 +7,9 @@ export default function Main() {
   const [visibleData, setVisibleData] = useState({});
 
   const selectTabHandler = (value) => {
+    setVisibleTableId(value.id);
     let index = selectedEventData.findIndex((x) => x.name === value.name);
     if (index === -1) {
-      setVisibleTableId(value.id);
       setSelectedEventData([...selectedEventData, value]);
     }
   };
@@ -29,6 +29,7 @@ export default function Main() {
     let data = selectedEventData.filter((value) => value.id != id);
     setSelectedEventData(data);
   };
+  console.log(selectedEventData, "check");
 
   return (
     <div className="main-container-fullpage">
