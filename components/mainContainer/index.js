@@ -12,12 +12,14 @@ export default function Main() {
   };
 
   useEffect(() => {
-    let data = EventJason.find((value) => value.id === visibleTableId);
+    let data = selectedEventData?.find((value) => value.id === visibleTableId);
     setVisibleData(data);
-  }, [visibleTableId]);
+  }, [selectedEventData]);
 
   const headerTabHandler = (value) => {
     setVisibleTableId(value.id);
+    let data = selectedEventData?.find((nValue) => nValue.id === value.id);
+    setVisibleData(data);
   };
 
   const tabCloseHandler = (id) => {
@@ -62,7 +64,7 @@ export default function Main() {
         </div>
         {visibleData ? (
           <div className="table-main">
-            {visibleData?.eventData?.map((value, i) => {
+            {visibleData.eventData?.map((value, i) => {
               return (
                 <div key={i} className="table-raw">
                   <div className="table-data">{value.timestamp}</div>
