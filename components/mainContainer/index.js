@@ -7,8 +7,11 @@ export default function Main() {
   const [visibleData, setVisibleData] = useState({});
 
   const selectTabHandler = (value) => {
-    setVisibleTableId(value.id);
-    setSelectedEventData([...selectedEventData, value]);
+    let index = selectedEventData.findIndex((x) => x.name === value.name);
+    if (index === -1) {
+      setVisibleTableId(value.id);
+      setSelectedEventData([...selectedEventData, value]);
+    }
   };
 
   useEffect(() => {
