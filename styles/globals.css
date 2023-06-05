@@ -40,6 +40,12 @@ a {
   border: 1px solid rgb(202, 201, 201);
   cursor: pointer;
 }
+.event-box-tab-active {
+  padding: 12px;
+  background-color: rgb(201, 202, 202);
+  border: 1px solid rgb(202, 201, 201);
+  cursor: pointer;
+}
 .event-box-tab:hover {
   background-color: rgb(219, 220, 221);
 }
